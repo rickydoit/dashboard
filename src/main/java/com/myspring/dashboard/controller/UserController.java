@@ -1,6 +1,6 @@
 package com.myspring.dashboard.controller;
 
-import com.myspring.dashboard.pojo.User;
+import com.myspring.dashboard.entity.User;
 import com.myspring.dashboard.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 import java.util.Random;
@@ -30,7 +29,7 @@ public class UserController {
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public Void addUser(){
 
-        User user = new User("jack "+ new Random(100),100, new Date());
+        User user = new User();
         userService.addUser(user);
         return null;
     }

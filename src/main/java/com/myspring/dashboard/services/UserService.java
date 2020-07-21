@@ -1,13 +1,13 @@
 package com.myspring.dashboard.services;
 
-import com.myspring.dashboard.pojo.User;
+import com.myspring.dashboard.entity.User;
 
 public interface UserService {
     String getAllUsers();
 
     User getUser(Long id);
 
-    int addUser(User user);
+    Integer addUser(User user);
 
     int deleteUser(Long id);
 
